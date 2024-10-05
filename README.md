@@ -2,7 +2,7 @@
 This project demonstrates the use of  PayPal payment SDK with Java SpringBoot and ThymeLeaf.
 
 ## How to run project
-1. Clone project with `git clone https://github.com/bruce-mig/paypal-integration>`
+1. Clone project with `git clone https://github.com/bruce-mig/paypal-integration.git`
 2. Create or Login to your PayPal Developer account at https://developer.paypal.com/dashboard/.
    - Enable Sandbox mode.
    - Navigate to App & Credentials and create a new app.
