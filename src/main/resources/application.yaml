@@ -1,0 +1,26 @@
+spring:
+  config:
+    import: vault://
+  application:
+    name: paypal_integration
+  cloud:
+    vault:
+      host: localhost
+      port: 8200
+      scheme: http
+      uri: http://localhost:8200
+      connection-timeout: 5000
+      read-timeout: 15000
+      token: ${VAULT_TOKEN}
+      kv:
+        backend: kv
+        default-context: paypal
+        enabled: true
+      enabled: true
+
+paypal:
+  client-id: ${vault.paypal.client.id}
+  client-secret: ${vault.paypal.client.secret}
+  mode: sandbox # use 'sandbox' for dev and 'live' for prod
+  cancel-url: ${vault.paypal.cancel-url}
+  success-url: ${vault.paypal.success-url}

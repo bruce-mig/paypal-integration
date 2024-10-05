@@ -1,0 +1,36 @@
+spring:
+  config:
+    activate:
+      on-profile: test
+  application:
+    name: paypal_integration
+  cloud:
+    vault:
+      enabled: false
+
+springdoc:
+  swagger-ui:
+    path: /docs.html
+  api-docs:
+    path: /docs
+
+file:
+  logs:
+    path: /files/logs/
+logging:
+  file:
+    name: files/logs/paypal-logger.log
+  logback:
+    rollingpolicy:
+      file-name-pattern: files/logs/archived/paypal-logger-%d{dd-MM-yyyy}.%i.log
+  level:
+    root: WARN
+    zw:
+      co:
+        chengetedzai: TRACE
+paypal:
+  client-id: test
+  client-secret: test
+  mode: sandbox # use 'sandbox' for dev and 'live' for prod
+  cancel-url: test
+  success-url: test

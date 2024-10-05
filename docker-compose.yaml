@@ -1,0 +1,23 @@
+services:
+  vault:
+    image: hashicorp/vault:latest
+    ports:
+      - "8200:8200"
+    environment:
+      - VAULT_ADDR=http://127.0.0.1:8200
+      - VAULT_API_ADDR=http://127.0.0.1:8200
+    #    command: server -config=/vault/config/vault-config.hcl
+    command: server
+    cap_add:
+      - IPC_LOCK
+    volumes:
+      - ./app/vault/raft/config:/vault/config
+      - ./app/vault/raft/data:/vault/data
+    networks:
+      - vault-network
+networks:
+  vault-network:
+    driver: bridge
+
+volumes:
+  vault-data:
