@@ -24,10 +24,10 @@ logging:
     rollingpolicy:
       file-name-pattern: files/logs/archived/paypal-logger-%d{dd-MM-yyyy}.%i.log
   level:
-    root: WARN
-    zw:
-      co:
-        chengetedzai: TRACE
+    root: INFO
+    com:
+      github:
+        bruce_mig: DEBUG
 paypal:
   client-id: test
   client-secret: test

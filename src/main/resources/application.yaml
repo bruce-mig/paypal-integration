@@ -24,3 +24,23 @@ paypal:
   mode: sandbox # use 'sandbox' for dev and 'live' for prod
   cancel-url: ${vault.paypal.cancel-url}
   success-url: ${vault.paypal.success-url}
+springdoc:
+  swagger-ui:
+    path: /docs.html
+  api-docs:
+    path: /docs
+
+file:
+  logs:
+    path: /files/logs/
+logging:
+  file:
+    name: files/logs/paypal-logger.log
+  logback:
+    rollingpolicy:
+      file-name-pattern: files/logs/archived/paypal-logger-%d{dd-MM-yyyy}.%i.log
+  level:
+    root: INFO
+    com:
+      github:
+        bruce_mig: DEBUG
